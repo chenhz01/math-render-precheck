@@ -2,6 +2,8 @@
 
 math-render-precheck is a static preflight for math in Markdown: it catches unpaired `$`/`$$`/`\(`/`\[` delimiters and common LaTeX traps (braceless `\frac`, raw `%`, `\left` without `\right`) before your renderer silently mangles them. Pure stdlib, no rendering engine, offline. Confidence: High (≥80%) for delimiter rules, per the 65-case suite.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Math renders broken in the *worst* way: silently. One stray `$` turns the rest of a paragraph into italic soup; a raw `%` starts a LaTeX comment that eats everything after it; a braceless `\frac12` renders as an error box on some engines and as garbage on others. Reviewers catch these only after publishing, and only on the page they happened to open. There is no cheap gate between "author wrote math" and "renderer consumed math".
